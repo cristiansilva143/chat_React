@@ -5,40 +5,34 @@ import Cabecera from "./components/Cabecera.js";  //Importo El Logo Header
 import Chat from "./components/Chat";   //Importo El campo usado para ver los Mensajes
 import './App.css';
 import Entrada from './components/Entrada'; // Importo el Imput para escribir el Mensaje
-import { unstable_Box as Box } from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 
 
 class App extends Component {
   render() {
     return (
 
-      <div >
+      <div style = {{flexGrow : "1", textAlign: "center"}} >
+
+        <Grid container spacing=  {24}>
+
+          <Grid item xs={12}>      
           <Cabecera />
+          </Grid>
+       
+          <Grid item xs={12}> 
+           <Chat/>
+           </Grid>
 
-
-        <div style = {{ display : "flex", justifyContent: "center" }}>
-            
-
-               <Chat/>
-        </div>
-   
-
-
-
-      <Box width="100%" bgcolor="background.paper">
-      <div style = {{ display : "flex", justifyContent: "center" }}>
-
-      <Box width={300} bgcolor="grey.300" p={1} my={0.5}>
-      <Entrada/>
-      </Box>
+             <Grid item xs={6}>
+               <Entrada/>
+             </Grid>
          
-      <Box width={300} bgcolor="grey.300" p={1} my={0.5}>
-      <Boton/>
-      </Box>
-
-           
-        </div>
-        </Box>
+             <Grid item xs={6}>
+              <Boton/>
+             </Grid>
+        </Grid>
+        
 
      
       </div>
